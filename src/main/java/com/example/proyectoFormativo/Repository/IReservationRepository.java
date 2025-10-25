@@ -1,7 +1,6 @@
-package com.example.projectoFormativo.Repository;
+package com.example.proyectoFormativo.Repository;
 
-import com.example.projectoFormativo.Model.Loan;
-import com.example.projectoFormativo.Model.Reservation;
+import com.example.proyectoFormativo.Model.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

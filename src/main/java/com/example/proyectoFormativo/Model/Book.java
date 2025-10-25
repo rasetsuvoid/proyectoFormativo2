@@ -1,4 +1,4 @@
-package com.example.projectoFormativo.Model;
+package com.example.proyectoFormativo.Model;
 
 import jakarta.persistence.*;
 
