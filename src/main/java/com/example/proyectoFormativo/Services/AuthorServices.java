@@ -1,9 +1,9 @@
-package com.example.projectoFormativo.Services;
+package com.example.proyectoFormativo.Services;
 
-import com.example.projectoFormativo.Dto.AuthorDto;
-import com.example.projectoFormativo.Interface.IAuthorServices;
-import com.example.projectoFormativo.Model.Author;
-import com.example.projectoFormativo.Repository.IAuthorRepository;
+import com.example.proyectoFormativo.Dto.AuthorDto;
+import com.example.proyectoFormativo.Interface.IAuthorServices;
+import com.example.proyectoFormativo.Model.Author;
+import com.example.proyectoFormativo.Repository.IAuthorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

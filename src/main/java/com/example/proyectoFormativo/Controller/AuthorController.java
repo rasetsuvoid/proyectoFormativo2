@@ -1,8 +1,7 @@
-package com.example.projectoFormativo.Controller;
+package com.example.proyectoFormativo.Controller;
 
-import com.example.projectoFormativo.Dto.AuthorDto;
-import com.example.projectoFormativo.Interface.IAuthorServices;
-import com.example.projectoFormativo.Model.Author;
+import com.example.proyectoFormativo.Dto.AuthorDto;
+import com.example.proyectoFormativo.Interface.IAuthorServices;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.example.projectoFormativo.Repository;
+package com.example.proyectoFormativo.Repository;
 
-import com.example.projectoFormativo.Model.Member;
+import com.example.proyectoFormativo.Model.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

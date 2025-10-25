@@ -1,4 +1,4 @@
-package com.example.projectoFormativo.Dto;
+package com.example.proyectoFormativo.Dto;
 
 import java.time.LocalDate;
 

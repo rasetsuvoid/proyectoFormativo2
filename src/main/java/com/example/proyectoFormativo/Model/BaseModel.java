@@ -1,4 +1,4 @@
-package com.example.projectoFormativo.Model;
+package com.example.proyectoFormativo.Model;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -7,7 +7,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
