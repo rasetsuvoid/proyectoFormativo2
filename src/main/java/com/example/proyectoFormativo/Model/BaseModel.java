@@ -17,17 +17,17 @@ public abstract class BaseModel implements Serializable {
     private Long Id;
 
     @CreatedDate
-    @Column(name = "CreatedDate", nullable = false, updatable = false)
+    @Column(name = "created_date", nullable = false, updatable = false)
     private LocalDateTime CreatedDate;
 
     @LastModifiedDate
-    @Column(name = "UpdatedDate")
+    @Column(name = "updated_date")
     private LocalDateTime UpdatedDate;
 
-    @Column(nullable = false)
+    @Column(name = "active", nullable = false)
     private Boolean Active = true;
 
-    @Column(nullable = false)
+    @Column(name = "is_deleted", nullable = false)
     private Boolean IsDeleted = false;
 
     // --- Hooks para fallback si el auditing no está activo ---
