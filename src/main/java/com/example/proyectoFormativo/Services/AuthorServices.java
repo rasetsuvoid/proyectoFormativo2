@@ -132,7 +132,6 @@ public class AuthorServices implements IAuthorServices {
             // Mapear a DTO
             AuthorDto dto = mapper.map(updatedAuthor, AuthorDto.class);
 
-            // Construir la respuesta
             response.setHttpStatusCode(HttpStatus.OK.value());
             response.setMessage("Autor actualizado correctamente");
             response.setData(dto);
