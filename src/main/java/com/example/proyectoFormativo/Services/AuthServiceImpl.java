@@ -10,7 +10,6 @@ import com.example.proyectoFormativo.Model.Role;
 import com.example.proyectoFormativo.Model.User;
 import com.example.proyectoFormativo.Repository.IRoleRepository;
 import com.example.proyectoFormativo.Repository.IUserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
