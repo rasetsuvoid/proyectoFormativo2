@@ -22,7 +22,7 @@ public class RoleSeeder implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) {
-        List<String> roles = Arrays.asList("ADMIN", "BIBLIOTECARIO", "LECTOR");
+        List<String> roles = Arrays.asList("ADMIN", "BIBLIOTECARIO", "LECTOR", "CLIENTE");
 
         for (String roleName : roles) {
             roleRepository.findByName(roleName).ifPresentOrElse(
