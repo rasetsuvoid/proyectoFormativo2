@@ -10,6 +10,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -20,6 +22,7 @@ import org.springframework.web.servlet.HandlerMapping;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
@@ -46,13 +49,21 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             if (jwtService.isValid(token)) {
                 String username = jwtService.getUsername(token);
 
-                UserDetails userDetails = uds.loadUserByUsername(username);
+                // 🔹 Leer roles del token
+                List<String> roles = jwtService.getRoles(token);
+
+                // 🔹 Convertir a authorities con prefijo ROLE_
+                List<SimpleGrantedAuthority> authorities = roles.stream()
+                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                        .toList();
+
+                System.out.println("Authorities: " + authorities);
 
                 UsernamePasswordAuthenticationToken authToken =
                         new UsernamePasswordAuthenticationToken(
-                                userDetails,
+                                username,
                                 null,
-                                userDetails.getAuthorities()
+                                authorities
                         );
 
                 authToken.setDetails(
@@ -63,7 +74,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             }
         }
 
-        // IMPORTANTE: dejar pasar la petición siempre
         chain.doFilter(request, response);
     }
 }

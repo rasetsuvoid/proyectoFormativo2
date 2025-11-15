@@ -7,6 +7,7 @@ import com.example.proyectoFormativo.Model.Author;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class AuthorController {
         this.services = services;
     }
 
+    @PreAuthorize("hasRole('BIBLIOTECARIO')")
     @GetMapping
     public ResponseEntity<ApiResponse<List<AuthorDto>>> listarAutores() {
         ApiResponse<List<AuthorDto>> response = services.findAll();

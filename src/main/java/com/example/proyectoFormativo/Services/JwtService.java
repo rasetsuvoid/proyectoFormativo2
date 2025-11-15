@@ -12,6 +12,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class JwtService {
@@ -45,6 +46,11 @@ public class JwtService {
 
     private Jws<Claims> parse(String token) {
         return Jwts.parserBuilder().setSigningKey(key()).build().parseClaimsJws(token);
+    }
+
+    public List<String> getRoles(String token) {
+        var claims = parse(token).getBody();
+        return claims.get("roles", List.class); // ["BIBLIOTECARIO"]
     }
 
     public long getExpiresInSeconds() { return expMinutes * 60; }
