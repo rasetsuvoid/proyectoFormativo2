@@ -23,7 +23,7 @@ public class EmailService {
      * @param subject   asunto
      * @param htmlBody  cuerpo HTML
      */
-    //@Async
+    @Async
     public void sendHtmlEmail(String to, String subject, String htmlBody) {
         try {
 

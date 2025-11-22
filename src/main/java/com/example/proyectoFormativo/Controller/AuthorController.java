@@ -21,7 +21,7 @@ public class AuthorController {
         this.services = services;
     }
 
-    @PreAuthorize("hasRole('BIBLIOTECARIO')")
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public ResponseEntity<ApiResponse<List<AuthorDto>>> listarAutores() {
         ApiResponse<List<AuthorDto>> response = services.findAll();

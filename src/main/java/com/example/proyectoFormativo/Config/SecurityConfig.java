@@ -74,7 +74,7 @@ public class SecurityConfig {
     @Order(1)
     public SecurityFilterChain authEndpoints(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/auth/**")  // SOLO aplica a /auth/...
+                .securityMatcher("/auth/**", "/api/reportes/**")
                 .csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
